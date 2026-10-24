@@ -25,8 +25,8 @@ def load_data():
     data = pd.read_csv("heart_disease_cleaned.csv")
 
     # Convert numeric columns safely
-    for col in data.columns:
-        data[col] = pd.to_numeric(data[col], errors="ignore")
+  for col in data.columns:
+    data[col] = pd.to_numeric(data[col], errors="coerce")
 
     for col in ["ca", "thal"]:
         if col in data.columns:
